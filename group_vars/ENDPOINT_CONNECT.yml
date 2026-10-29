@@ -1,0 +1,36 @@
+---
+servers:
+  - name: Host1
+    adapters:
+      - endpoint_ports: [ Ethernet1, Ethernet2 ]
+        switch_ports: [ Ethernet1, Ethernet1 ]
+        switches: [ ASW01, ASW02 ]
+        vlans: 101
+        mode: access
+        spanning_tree_portfast: edge
+        port_channel:
+          description: PortChannel Host1
+          mode: active
+  - name: Host2
+    adapters:
+      - endpoint_ports: [ Ethernet1, Ethernet2 ]
+        switch_ports: [ Ethernet2, Ethernet2 ]
+        switches: [ ASW01, ASW02 ]
+        vlans: 201
+        mode: access
+        spanning_tree_portfast: edge
+        port_channel:
+          description: PortChannel Host2
+          mode: active
+
+  - name: Host3
+    adapters:
+      - endpoint_ports: [ Ethernet1, Ethernet2 ]
+        switch_ports: [ Ethernet3, Ethernet3 ]
+        switches: [ ASW01, ASW02]
+        vlans: 301
+        mode: access
+        spanning_tree_portfast: edge
+        port_channel:
+          description: PortChannel Host3
+          mode: active
