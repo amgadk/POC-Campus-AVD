@@ -37,7 +37,7 @@ all:
           children:
             DC1_SPINES:
               vars:
-                type: spine
+                type: l3spine
               hosts:
                 CSW01:
                   ansible_host: 192.168.0.111
@@ -45,7 +45,7 @@ all:
                   ansible_host: 192.168.0.112
             DC1_LEAVES:
               vars: 
-                type: l3leaf
+                type: l2leaf
               hosts:
                 ASW01:
                   ansible_host: 192.168.0.101
@@ -60,6 +60,8 @@ all:
     EVPN_SERVICES:
       children:
         DC1_LEAVES:
+        DC1_SPINES:
     ENDPOINT_CONNECT:
       children:
         DC1_LEAVES:
+
